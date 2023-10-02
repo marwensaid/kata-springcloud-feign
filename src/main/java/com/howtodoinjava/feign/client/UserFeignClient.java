@@ -1,16 +1,10 @@
 package com.howtodoinjava.feign.client;
 
-import com.howtodoinjava.feign.dto.User;
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+//TODO initialize a feign client here and get users from this repository : https://jsonplaceholder.typicode.com
 
-import java.util.List;
-
-@FeignClient(value = "userFeignClient", url = "https://jsonplaceholder.typicode.com/")
 public interface UserFeignClient {
 
-  @RequestMapping(method = RequestMethod.GET, value = "/users")
-  ResponseEntity<List<User>> getUsers();
+
+  //TODO in this interface init a method to get users from our repository
+
 }

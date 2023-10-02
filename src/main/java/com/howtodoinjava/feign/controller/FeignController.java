@@ -2,18 +2,11 @@ package com.howtodoinjava.feign.controller;
 
 import com.howtodoinjava.feign.client.AccountFeignClient;
 import com.howtodoinjava.feign.client.PostsFeignClient;
-import com.howtodoinjava.feign.dto.Post;
-import com.howtodoinjava.feign.dto.User;
 import feign.Feign;
 import feign.gson.GsonDecoder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
-@RestController
+//TODO : declare a rest controller
 public class FeignController {
 
   private PostsFeignClient postsFeignClient;
@@ -28,18 +21,9 @@ public class FeignController {
             "https://jsonplaceholder.typicode.com/");
   }
 
-  @GetMapping(value = "/users")
-  public List<User> getAllUsers() {
-    return this.accountFeignClient.getUsers().getBody();
-  }
+  //TODO expose users data retrieved in Interface here using GetMapping
+  //TODO expose photos retrieved in Interface here using GetMapping
+  //TODO expose users by Id (filter) retrieved in Interface here using GetMapping
 
-  @GetMapping(value = "/posts")
-  public List<Post> getAllPosts() {
-    return this.postsFeignClient.getPosts();
-  }
 
-  @GetMapping(value = "/account/{userId}")
-  public String getAccountByUserId(@PathVariable("userId") Integer userId) {
-    return this.accountFeignClient.getAccountByUserId(userId);
-  }
 }
